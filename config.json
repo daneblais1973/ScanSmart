@@ -1,0 +1,108 @@
+{
+  "database": {
+    "url": "postgresql://neondb_owner:npg_oufZOzQ5VDc6@ep-curly-resonance-agwmkbq7.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require",
+    "host": "ep-curly-resonance-agwmkbq7.c-2.eu-central-1.aws.neon.tech",
+    "port": 5432,
+    "database": "neondb",
+    "user": "neondb_owner",
+    "password": "npg_oufZOzQ5VDc6",
+    "pool_size": 5,
+    "max_overflow": 10
+  },
+  "cache": {
+    "redis_url": "redis://localhost:6379/0",
+    "default_ttl": 300,
+    "max_memory": "100mb",
+    "enabled": true
+  },
+  "nlp": {
+    "model_cache_dir": "./models",
+    "finbert_model": "ProsusAI/finbert",
+    "bart_model": "facebook/bart-large-cnn",
+    "spacy_model": "en_core_web_sm",
+    "batch_size": 64,
+    "max_sequence_length": 512,
+    "device": "auto",
+    "lazy_loading": true,
+    "model_type": "heavy",
+    "processing_mode": "hybrid",
+    "inference_mode": "local",
+    "auto_cleanup": true,
+    "memory_threshold_mb": 4096,
+    "sentiment_threshold": 0.6,
+    "mode": "ai",
+    "min_sources_for_validation": 2,
+    "validation_confidence_threshold": 0.8,
+    "lightweight_models": {
+      "finbert": "nlptown/bert-base-multilingual-uncased-sentiment",
+      "bart": "sshleifer/distilbart-cnn-12-6",
+      "spacy": "en_core_web_sm"
+    }
+  },
+  "alerts": {
+    "min_impact_score": 70,
+    "min_confidence": 0.7,
+    "rate_limit_minutes": 5,
+    "max_alerts_per_hour": 20,
+    "enabled_channels": [
+      "email",
+      "console"
+    ]
+  },
+  "api": {
+    "fmp_key": "",
+    "alpha_vantage_key": "",
+    "polygon_key": "",
+    "tiingo_key": "",
+    "yahoo_finance_key": "",
+    "newsapi_key": "",
+    "twitter_bearer_token": "",
+    "reddit_client_id": "",
+    "reddit_client_secret": "",
+    "sec_edgar_email": "",
+    "fda_api_key": "",
+    "openai_api_key": "",
+    "anthropic_api_key": "",
+    "huggingface_token": "",
+    "twilio_account_sid": "",
+    "twilio_auth_token": "",
+    "twilio_phone_number": "",
+    "smtp_server": "",
+    "smtp_port": 587,
+    "smtp_username": "",
+    "smtp_password": "",
+    "request_timeout": 30,
+    "max_retries": 3,
+    "rate_limit_delay": 0.5
+  },
+  "fetchers": {
+    "max_concurrent": 25,
+    "timeout_seconds": 30.0,
+    "max_retries": 3,
+    "rate_limit_delay": 0.5,
+    "batch_size": 200,
+    "cache_enabled": true,
+    "cache_ttl": 300,
+    "worker_pool_size": 15,
+    "concurrent_nlp_workers": 10,
+    "cross_validation_enabled": true,
+    "sector_specific_detection": true,
+    "dynamic_parameters": true
+  },
+  "ui": {
+    "theme": "dark",
+    "auto_refresh": true,
+    "refresh_interval": 60,
+    "show_notifications": true,
+    "min_impact_score": 50,
+    "min_confidence": 0.7,
+    "max_age_hours": 24,
+    "enabled_exchanges": [
+      "NYSE",
+      "NASDAQ"
+    ],
+    "market_cap_min": 100,
+    "market_cap_max": 1000,
+    "volume_min": 100000
+  }
+}
